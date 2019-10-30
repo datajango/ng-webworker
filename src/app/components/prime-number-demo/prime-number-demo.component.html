@@ -1,0 +1,17 @@
+<h1>Prime Number Demo</h1>
+
+<button mat-flat-button color="primary" (click)='startTimer()'>Start Timer</button>
+<button mat-flat-button color="accent" (click)='stopTimer()'>Stop Timer</button>
+<button mat-flat-button color="warn" (click)='clear()'>Clear</button>
+<button mat-flat-button color="primary" (click)="runWorker()">Web Worker</button>
+<button mat-flat-button color="accent" (click)="runThread()">JavaScript Thread</button>
+<mat-list class="message-list" *ngFor="let item of messages" >
+    <mat-list-item [ngClass]="{
+        'message-list-item-event': item.type != 1,
+        'message-list-item-timer': item.type == 1
+      }">
+      <i *ngIf="item.type == 1" class="material-icons">alarm</i>
+      <i *ngIf="item.type == 2" class="material-icons">error</i>
+      <i *ngIf="item.type == 3" class="material-icons">stop</i>
+      {{item.message}}</mat-list-item>
+</mat-list>

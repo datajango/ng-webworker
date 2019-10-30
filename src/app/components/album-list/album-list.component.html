@@ -1,0 +1,21 @@
+<mat-table [dataSource]="dataSource">
+
+    <ng-container  matColumnDef="userId">
+        <mat-header-cell *matHeaderCellDef>User Id</mat-header-cell>
+        <mat-cell *matCellDef="let album">{{album.userId}}</mat-cell>
+    </ng-container>
+
+    <ng-container  matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>Album Id</mat-header-cell>
+        <mat-cell *matCellDef="let album">{{album.id}}</mat-cell>
+    </ng-container>
+                
+
+    <ng-container  matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+        <mat-cell *matCellDef="let album">{{album.title}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: tableColumns"></mat-row>
+</mat-table>

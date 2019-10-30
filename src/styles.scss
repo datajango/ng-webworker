@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.message-list {    
+}
+
+.message-list-item-timer {
+    padding: 0px !important;
+    margin: 0px;
+    height: 25px  !important;
+
+    background-color: paleturquoise; 
+}
+
+.message-list-item-event {
+
+    padding: 0px !important;
+    margin: 0px;
+    height: 25px  !important;
+
+    background-color: lightseagreen; 
+}
