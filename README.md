@@ -1,5 +1,7 @@
 # NgWebworkers
 
+by Anthony Leotta
+
 ## Setting up Material Design
 
 Use the Angular CLI Schematic for Material.
@@ -151,6 +153,14 @@ ng g c components\albums-view
 ## Create a Test RESTful API
 
 I used JSON Server.
+
+## Configuring Service Worker to cache data.
+
+Inside ngsw-config.json, edit the following:
+
+```
+
+```
 
 
 ## Add a web-worker using Angular CLI version 8
