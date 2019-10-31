@@ -1,6 +1,14 @@
 # NgWebworkers
 
-by Anthony Leotta
+- by Anthony Leotta
+- I collected information from many web-pages to create this overview document.  I did not site my referneces but I included a list of them at the bottom of this document.
+
+## What are Web Workers?
+
+- JavaScript is a single-threaded language, meaning that all your operations are run by the very same thread.  If you perform compute intensive tasks on the thread, the rest of the tasks will have to way for those to be finished, leading to sloppy UI rendering and whatnot.
+- Web workers are independent scripts that run in an isolated thread. 
+- A worker is an object created using a constructor (e.g. Worker()) that runs a named JavaScript file — this file contains the code that will run in the worker thread; workers run in another global context that is different from the current window. 
+
 
 ## Setting up Material Design
 
@@ -40,7 +48,47 @@ without blocking or choking your main browser thread.
 - Web workers
 - Inline Workers
 - Dedicated Workers
+- Chrome Workers
 - Audio Workers
+
+
+## Service workers
+
+Service Workers act as a Proxy server that sits between web application and the browser. when the network is available they are intended to create effective offline experiences. Intercept the network requests and take appropriate action based on whether the network is available.
+
+This will also allow access to push notifications and background sync APIS
+
+## Shared workers
+
+Shared workers are utilized by multiple scripts running in different windows, IFrames and more, as long as you run in the same domain. However, the scripts must communicate via an active port.
+
+## Web workers
+
+Makes it possible to run a script operation in a background thread separate from the main execution thread of a web application. The advantage of this is that laborious processing can be performed in a separate thread, allowing the main (usually the UI) thread to run without being blocked/slowed down.
+
+## Inline Workers 
+
+Create a web worker from a function that you give it. 
+
+```
+function createWorker(fn) {
+    var blob = new Blob(['self.onmessage = ', fn.toString()], { type: 'text/javascript' });
+    var url = URL.createObjectURL(blob);  
+    return new Worker(url);
+}
+```
+
+## Dedicated Workers
+
+Dedicated workers are utilized by a single script.
+
+## Chrome Workers
+
+Chrome Workers is a Firefox – Only type of worker that can use if you are developing add-ons and want to use Worker and have access to js-ctypes. 
+
+## Audio Workers
+
+Audio workers provide the ability for direct scripted audio processing to be done inside a web worker context.
 
 ## Architectural Patterns
 
@@ -232,6 +280,8 @@ runWorker() {
 
 ## References
 
+- [Using Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+- [Google Web Developers Site](https://developers.google.com/web)
 - [Angular Material 8 Tutorial: Build Navigation UI with Toolbar and Side Navigation Menu](https://www.techiediaries.com/angular-material-navigation-toolbar-sidenav/)
 - [Observable Web Workers with Angular (8) - Introduction](https://dev.to/zakhenry/observable-webworkers-with-angular-8-4k6)
 - [Non blocking, Performant Web Worker in your Angular Application](https://medium.com/@ganeshsurfs/non-blocking-performant-web-worker-in-your-angular-application-808fb9ab98c2)
