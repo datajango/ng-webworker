@@ -1,0 +1,37 @@
+<h2>{{ componentName }}</h2>
+
+<h4>Basic native select</h4>
+
+<p>
+<mat-form-field>
+  <mat-label>Select Text< to Search</mat-label>
+  <select matNativeControl required [formControl]="bookSelectionFormControl" >
+      <option *ngFor="let book of bookChoices" [value]="book.url">
+          {{ book.name }}
+        </option>
+  </select>
+</mat-form-field>
+</p>
+
+<p>
+<mat-form-field class="example-full-width">
+    <mat-label>Seach</mat-label>
+  <input type="text"  matInput placeholder="Enter search here" [formControl]="searchTermFormControl">
+</mat-form-field>
+</p>
+
+<span *ngIf="searchResultProgress$ | async as searchResultProgress">
+  Progress: {{ searchResultProgress[0] }} / {{ searchResultProgress[1] }} ({{
+    searchResultProgress[0] / searchResultProgress[1] | percent
+  }})
+</span>
+
+<ng-container *ngFor="let matchingParagraph of searchResultParagraphs$ | async">
+  <hr />
+  <blockquote>
+    <span>{{ matchingParagraph.before }}</span>
+    <strong>{{ matchingParagraph.match }}</strong>
+    <span>{{ matchingParagraph.after }}</span>
+    <footer>Score: {{ matchingParagraph.score }}</footer>
+  </blockquote>
+</ng-container>
