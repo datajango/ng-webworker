@@ -16,6 +16,7 @@ import { AlbumDetailComponent } from './components/album-detail/album-detail.com
 import { AlbumEditComponent } from './components/album-edit/album-edit.component';
 import { AlbumListComponent } from './components/album-list/album-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Demo1Component } from './observable/demo1/demo1.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     AlbumAddComponent,
     AlbumDetailComponent,
     AlbumEditComponent,
-    AlbumListComponent
+    AlbumListComponent,
+    Demo1Component
   ],
   imports: [
     BrowserModule,
