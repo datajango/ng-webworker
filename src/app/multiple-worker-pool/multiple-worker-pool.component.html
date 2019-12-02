@@ -1,0 +1,19 @@
+<h2>Multiple Worker Pool</h2>
+<h3 *ngIf="status$ | async as status">({{ status }})</h3>
+
+<p>Select multiple files of varying sizes to compute MD5 sum of, in pool of webworkers:</p>
+
+<section>
+  <small>(No files are uploaded; they're kept entirely within your browser)</small>
+</section>
+<input type="file" multiple (change)="calculateMD5Multiple($event)" />
+
+<h3 [attr.data]="chartObserver$ | async">Timeline</h3>
+<div #timeline></div>
+
+<h3>Events:</h3>
+<ol [attr.data]="workResult$ | async">
+  <li *ngFor="let event of eventListPool$ | async">
+    <app-log-line *ngIf="filenames$ | async as filenames" [message]="event" [files]="filenames"></app-log-line>
+  </li>
+</ol>

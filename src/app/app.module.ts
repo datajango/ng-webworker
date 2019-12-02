@@ -19,6 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { Demo1Component } from './observable/demo1/demo1.component';
 import { BookSearchComponent } from './book-search/main-thread/book-search.component';
 import { BookSearchWorkerComponent } from './book-search/worker-thread/book-search-worker.component';
+import { FilesHashComponent } from './files-hash/files-hash.component';
+import { SingleWorkerComponent } from './single-worker/single-worker.component';
+import { MultipleWorkerPoolComponent } from './multiple-worker-pool/multiple-worker-pool.component';
+import { LogLineComponent } from './multiple-worker-pool/log-line/log-line.component';
+import { ParallelDemoComponent } from './parallel-demo/parallel-demo.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,12 @@ import { BookSearchWorkerComponent } from './book-search/worker-thread/book-sear
     AlbumListComponent,
     Demo1Component,
     BookSearchComponent,
-    BookSearchWorkerComponent
+    BookSearchWorkerComponent,
+    FilesHashComponent,
+    SingleWorkerComponent,
+    MultipleWorkerPoolComponent,
+    LogLineComponent,
+    ParallelDemoComponent
   ],
   imports: [
     BrowserModule,
