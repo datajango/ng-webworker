@@ -9,6 +9,7 @@ import { AlbumAddComponent } from './components/album-add/album-add.component';
 import { AlbumEditComponent } from './components/album-edit/album-edit.component';
 import { Demo1Component } from './observable/demo1/demo1.component';
 import { BookSearchComponent } from './book-search/main-thread/book-search.component';
+import { ParallelDemoComponent } from './parallel-demo/parallel-demo.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'album-edit/:id', component: AlbumEditComponent },
   { path: 'observable-demo1', component: Demo1Component},
   { path: 'search-demo', component: BookSearchComponent},
+  { path: 'parallel-demo', component: ParallelDemoComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
