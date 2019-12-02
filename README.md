@@ -277,6 +277,35 @@ runWorker() {
 
 ## Observable Web Worker
 
+1. Created a new branch on github named Observable_Web_Worker
+1. git fetch origin
+1. git checkout Observable_Web_Worker
+1. [Observable Web Workers with Angular](https://dev.to/zakhenry/observable-webworkers-with-angular-8-4k6)
+1. Add the npm package for Observable WebWorkers
+  ```
+  npm install --save observable-webworker
+  ```
+1. The package can be found at this address: [Observable Webworker](https://www.npmjs.com/package/observable-webworker)
+  
+    - Simple fromWorker function from main thread side
+    - Fully RxJS interfaces allowing both main thread and worker thread streaming
+    - Error handling across the thread boundaries is propagated
+    - Under the hood materialize and dematerialize is used as a robust transport of streaming errors
+    - Automatic handling of worker termination on main thread unsubscription of observable
+    - Framework agnostic - while the demo uses Angular, the only dependencies are rxjs so React or Vue or plain old js is completely compatible
+    - Fully compatible with Webpack worker-plugin
+    - Therefore compatible with Angular webworker bundling which uses this
+    - Class interface based worker creation (should be familiar API for Angular developers)
+    - Unopinionated on stream switching behavior, feel free to use mergeMap, switchMap or exhaustMap in your worker if the input stream outputs multiple items that generate their own stream of results
+    - Built in interfaces for handling Transferable parts of message payloads so large binaries can transferred efficiently without copying - See Transferable section for usage
+    - Automatic destruction of worker on unsubscription of output stream, this allows for smart cancelling of computation using switchMap operator, or parallelisation of computation with mergeMap
+    - Worker Pool strategy - maximise the throughput of units of work by utilising all cores on the host machine
+    - [Observable Webworker github repo](https://github.com/cloudnc/observable-webworker#readme)
+
+1. Create a new component
+  ```
+  ng g component observable/demo1
+  ```
 
 ## References
 

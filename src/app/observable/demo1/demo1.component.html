@@ -1,0 +1,21 @@
+<h2>Demo 1</h2>
+
+<form>
+  <mat-form-field>
+    <mat-label>Message</mat-label>
+    <input [(ngModel)]="messageText" name="messageText" matInput placeholder="message goes here">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+  <p>
+    <button  color="primary" mat-raised-button (click)="runWorker()">Run Worker</button>
+  </p>
+</form>
+
+
+
+
+<ul>
+  <li *ngFor="let message of messages">
+    {{ message }}
+  </li>
+</ul>

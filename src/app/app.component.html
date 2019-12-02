@@ -23,10 +23,11 @@
       <a mat-list-item [routerLink]="'/home'"> Home </a>
       <a mat-list-item [routerLink]="'/albums'"> Albums </a>
       <a mat-list-item [routerLink]="'/prime-number-demo'"> Prime Numbers </a>
+      <a mat-list-item [routerLink]="'/observable-demo1'"> Observables Demo1</a>
       <a mat-list-item (click)="sidenav.toggle()" mat-list-item>Close</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>  
+  <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
