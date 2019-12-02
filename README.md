@@ -302,10 +302,13 @@ runWorker() {
     - Worker Pool strategy - maximise the throughput of units of work by utilising all cores on the host machine
     - [Observable Webworker github repo](https://github.com/cloudnc/observable-webworker#readme)
 
-1. Create a new component
-  ```
-  ng g component observable/demo1
-  ```
+
+
+## Observable Web Workers, a deep dive into a realistic use case
+
+1. Following: [Part 2](https://dev.to/zakhenry/observable-web-workers-a-deep-dive-into-a-realistic-use-case-4042)
+1. I just copied the code from Zak Henry's blog, there is too much here to type in manaully.  Too many errors would result.
+
 
 ## References
 
